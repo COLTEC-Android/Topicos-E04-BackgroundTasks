@@ -24,12 +24,20 @@
             android:text="Download"
             android:id="@+id/btn_download" />
     </LinearLayout>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:id="@+id/img_picture" />
-
-    <!-- TODO[2] Incluir ProgressBar para exibir durante download da imagem -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/img_picture" />
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            android:id="@+id/progressBar"/>
+    </FrameLayout>
 </LinearLayout>
