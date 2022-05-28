@@ -32,4 +32,10 @@
         android:id="@+id/img_picture" />
 
     <!-- TODO[2] Incluir ProgressBar para exibir durante download da imagem -->
+    <ProgressBar
+        android:id="@+id/progessBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"/>
 </LinearLayout>
