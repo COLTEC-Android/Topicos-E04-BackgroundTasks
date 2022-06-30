@@ -24,11 +24,25 @@ public class MainActivity extends AppCompatActivity {
 
 //        TODO[1]: Processo de download e carregamento da imagem acontecendo na Main Thread, ALTERAR!!
         downloadBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 // TODO[2]: Exibir barra de progresso quando estiver fazendo download da imagem
-                Bitmap img = MainActivity.this.downloadImage(txtLink.getText().toString());
-                imgView.setImageBitmap(img);
+
+                Thread t = new Thread(){
+                    public void run(){
+                        //thread "secundaria"
+                        Bitmap img = MainActivity.this.downloadImage(txtLink.getText().toString());
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //thread "principal"
+                                imgView.setImageBitmap(img);
+                            }
+                        });
+                    }
+                };
+                t.start();
             }
         });
     }
