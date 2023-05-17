@@ -1,4 +1,4 @@
-package br.ufmg.coltec.topicos_e04_backgroundtasks;
+package com.example.testeatividade;
 
 /**
  * Classe retirada do livro Google Android, 3a edição
